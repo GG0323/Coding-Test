@@ -1,0 +1,23 @@
+import sys
+from collections import deque
+input = sys.stdin.readline
+queue = deque()
+
+for i in range(int(input())):
+    op = input()
+    if 'push_front' in op:
+        queue.appendleft(op.split()[-1])
+    elif 'push_back' in op:
+        queue.append(op.split()[-1])
+    elif 'pop_front' in op:
+        print(f'{queue.popleft() if queue else -1}')
+    elif 'pop_back' in op:
+        print(f'{queue.pop() if queue else -1}')
+    elif 'size' in op:
+        print(f'{len(queue)}')
+    elif 'empty' in op:
+        print(f'{int(bool(not queue))}')
+    elif 'front' in op:
+        print(f'{queue[0] if queue else -1}')
+    else:
+        print(f'{queue[-1] if queue else -1}')
