@@ -1,0 +1,1 @@
+print(''.join([i.upper() if i in 'abcdefghijklmnopqrstuvwxyz' else i.lower() for i in input()]))
